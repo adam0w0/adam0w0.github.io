@@ -1,0 +1,289 @@
+body {
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+    margin: auto;
+    padding: 0;
+    text-align: center;
+	max-width: 60%;
+}
+
+.banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/bush_banner_ws.jpg') no-repeat center/cover;
+    z-index: -2;
+}
+
+.blob-container {
+    position: relative;
+    max-width: 90%;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.blob-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 60% 40% 65% 35% / 40% 60% 40% 60%;
+    z-index: -1;
+}
+
+nav a {
+	position: relative;
+	text-decoration: none;
+	color: black;
+	font-size: 14px;
+}
+
+nav a::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	width: 100%;
+	height: 2px;
+	background-color: darkgrey;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+	opacity: 1;
+}
+
+nav a.activeLink::after{
+	opacity: 1;
+	background-color: black;
+}
+
+h1{
+    font-size: 42px;
+	color: #333;
+}
+
+h2{
+	color: #333;
+}
+
+u {
+	position: relative;
+	text-decoration: none;
+}
+
+u::after {
+	content: "";
+	position: absolute;
+	bottom: -15px; /* Distance from the text */
+	left: 50%;
+	transform: translateX(-50%); /* Adjust so it's perfectly centered */
+	width: 120%; /* Make the underline 20% longer than the text */
+	height: 1px; /* Thickness of the underline */
+	background-color: black; /* Color of the underline */
+}
+
+ul.navBoxes {
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: auto;
+	padding: 0;
+	max-width: 80%;
+}
+
+ul.contentBoxes {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  padding: 0;
+  gap: 20px;
+}
+
+ul.contentBoxes li {
+  flex: 1 1 45%;
+  min-width: 250px;
+	text-align: left;
+}
+
+ul.contentBoxes li img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul.weddingPlan {
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: auto;
+	padding: 0;
+	width: 250px;
+}
+
+.scheduleTable {
+	margin: auto;
+	width: 50%;
+	padding: 40px;
+    border-top: 1px solid grey;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    color: darkgrey;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+#registryImage {
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+#registryImage:hover {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4); /* Adds a soft shadow */
+}
+
+#registryLink {
+	color: #2e4590;
+}
+
+#registryLink:hover {
+	color: #1d2a54;
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  
+	nav {
+		padding-top: 20px;
+		border-top: 1px solid black;
+		border-bottom: 1px solid black;
+		margin-bottom: 20px;
+		width: 100%;
+	}
+  main {
+    padding-top: 150px !important; /* Reduced padding for mobile */
+  }
+  
+  .blob-container {
+    margin: 20px auto;
+    padding: 10px;
+    max-width: 95%;
+  }
+  
+  h1 {
+    font-size: 32px;
+  }
+	
+nav a {
+	position: relative;
+	text-decoration: none;
+	color: black;
+	font-size: 20px;
+}
+  
+  ul.navBoxes {
+    flex-direction: column;
+    gap: 15px;
+    max-width: 100%;
+  }
+  
+  ul.navBoxes li {
+    margin-bottom: 25px;
+  }
+  
+  .scheduleTable {
+    width: 90%;
+    padding: 20px 10px;
+  }
+  
+  ul.weddingPlan {
+    width: 100%;
+  }
+	ul.contentBoxes {
+    flex-direction: column;
+  }
+  
+  ul.contentBoxes li {
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: 100%;
+  }
+  
+  /* This reverses the order of the items */
+  ul.contentBoxes li:first-child {
+    order: 2; /* Move image to bottom */
+  }
+  
+  ul.contentBoxes li:last-child {
+    order: 1; /* Move text to top */
+  }
+  
+  ul.contentBoxes li img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* For extra small screens (max-width: 400px) */
+@media screen and (max-width: 400px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 75px !important;
+  }
+  
+  .photo-section {
+    order: -1; /* Move to the top */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .photo-section img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+  }
+  
+  section {
+    margin: 10px 0;
+    padding: 15px 10px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin: 10px 0;
+  }
+  
+  h2 {
+    font-size: 22px;
+  }
+  
+  .banner {
+    height: 150px;
+  }
+	ul.contentBoxes li {
+    padding: 0 10px;
+  }
+}

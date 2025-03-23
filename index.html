@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Megan Metcalfe &amp; Adam Wilson's Wedding</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main style="padding-top: 230px">
+		<div class="banner"></div>
+    	<div class="blob-container">
+        <div class="blob-shape"></div>
+        
+        <section>
+            <h1>MEGAN &amp; ADAM</h1>
+            <p>THURSDAY JULY 10, 2025 &bull; BALLARA RECEPTIONS, ELTHAM</p>
+            <p><span id="countdown"></span> DAYS TO GO!</p>
+        </section>
+        
+        <nav>
+            <ul class="navBoxes">
+                <li><a href="index.html" class="activeLink">Home</a></li>
+                <li><a href="our_story.html">Our Story</a></li>
+                <li><a href="wedding_party.html">Wedding Party</a></li>
+                <li><a href="#">RSVP</a></li>
+                <li><a href="registry.html">Registry</a></li>
+            </ul>
+        </nav>
+        
+        <section class="photo-section">
+            <img src="images/Casey_MandA.jpg" alt="A photograph of Megan and Adam together with greenery in the background"/>
+        </section>
+        
+        <section>
+            <h2>July 10, 2025</h2>
+            <h3>Ballara Receptions,
+			<br>
+			1435 Main Road, Eltham, VIC
+			</h3>
+        </section>
+        
+		<section>
+			<h2 style="color: #f68a41;">RSVP by June 10, 2025</h2>
+		</section>
+			
+        <section>
+            <h2>Wedding Day</h2>
+            <p>THURSDAY, JULY 10, 2025</p>
+            <p>3:00 PM - 9:30 PM</p>
+        </section>
+			
+		<section>
+		<div class="scheduleTable">
+			<ul class="weddingPlan">
+			  <li>3:15 PM - 3:45 PM</li>
+				<li>CEREMONY</li>
+			  </ul>
+		</div>
+		<div class="scheduleTable" style="border-bottom: 1px solid grey;">
+			<ul class="weddingPlan">
+			  <li>4:30 PM - 9:30 PM</li>
+				<li>RECEPTION
+				</li>
+			  </ul>
+		</div>
+        </section>
+        
+        <section>
+          <h1><u>M &amp; A</u></h1>
+            <p>10.07.2025</p>
+        </section>
+    </div>
+	</main>
+    
+	<footer>
+      <p style="font-size: 10px;">Created by Adam Wilson</p>
+    </footer>
+	
+	<script>
+	// Function to calculate days until the wedding
+	function updateCountdown() {
+		// Set the wedding date - Month is 0-indexed (0 = January, 6 = July)
+		const weddingDate = new Date(2025, 6, 10);
+
+		// Get current date
+		const currentDate = new Date();
+
+		// Reset time portion to ensure we're just counting full days
+		currentDate.setHours(0, 0, 0, 0);
+		weddingDate.setHours(0, 0, 0, 0);
+
+		// Calculate the difference in milliseconds
+		const difference = weddingDate - currentDate;
+
+		// Convert to days (use floor instead of ceil)
+		const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+		// Display the countdown
+		const countdownElement = document.getElementById('countdown');
+
+		if (days > 0) {
+			countdownElement.textContent = days;
+		} else if (days === 0) {
+			countdownElement.textContent = "0";
+			document.querySelector("#countdown").nextSibling.textContent = " - TODAY'S THE DAY!";
+		} else {
+			countdownElement.textContent = "";
+			document.querySelector("#countdown").nextSibling.textContent = "THE WEDDING HAS ALREADY HAPPENED!";
+		}
+	}
+        
+        // Call the function when the page loads
+        window.onload = updateCountdown;
+    </script>
+</body>
+</html>
